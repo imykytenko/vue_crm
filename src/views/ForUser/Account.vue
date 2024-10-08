@@ -1,6 +1,8 @@
 <template>
+  <div class="container">
     <Navbar :active-page_2="activePage_2"></Navbar>
     <UserAcc></UserAcc>
+  </div>
 </template>
 
 <script>

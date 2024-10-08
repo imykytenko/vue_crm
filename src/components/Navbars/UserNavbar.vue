@@ -19,7 +19,6 @@
     export default {
         name: 'NavbarUser',
         props: {
-            // Оголошення пропсу для отримання значення від батьківського компонента
             activePage_2: {
                 type: String,
                 required: true,

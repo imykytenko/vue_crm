@@ -1,79 +1,116 @@
 <template>
-    <div>
-        <div v-for="user in user" :key="user.ID">
-            <table class="table table-striped">
-                <tbody>
-                <tr>
-                    <th scope="row">Ім'я </th>
-                    <td>{{user.NAME}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Прізвище</th>
-                    <td>{{user.LASTNAME}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Номер телефону</th>
-                    <td>{{user.PHONE}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Пошта</th>
-                    <td>{{user.EMAIL}}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <button type="button" class="btn btn-primary" v-on:click="logout">Вийти
-        </button>
-        <h3 class="text-center">Мої замовлення</h3>
-        <div class="shadow div p-3 mb-5 bg-body-tertiary rounded" v-for="book in
-    order"  :key="book.ID">
-            <div class="title">
-                <div class="img text-center">
-                    Обкладинка у розробці
-                </div>
-                <div>
-                    <p>Назва: {{ book.TITLE }}</p>
-                    <p>Автор: {{ book.NAME }}  {{book.LASTNAME}}</p>
-                    <p>Мова: {{book.LANGUAGE}}</p>
-                    <p>К-сть сторінок: {{book.PAGE_AMOUNT}}</p>
-                </div>
-            </div>
-            <div>
-                <p>{{book.PRICE}} .00</p>
-            </div>
-        </div>
+  <div>
+    <div v-for="user in users" :key="user.ID">
+      <table class="table table-striped">
+        <tbody>
+        <tr>
+          <th scope="row">Ім'я</th>
+          <td>{{ user.NAME }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Прізвище</th>
+          <td>{{ user.LASTNAME }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Номер телефону</th>
+          <td>{{ user.PHONE }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Пошта</th>
+          <td>{{ user.EMAIL }}</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
+    <button type="button" class="btn btn-primary" v-on:click="logout">Вийти</button>
+    <h3 class="text-center">Мої замовлення</h3>
+    <div class="shadow div p-3 mb-5 bg-body-tertiary rounded" v-for="book in orders" :key="book.ID">
+      <div class="title">
+        <div class="img text-center">
+          <img :src="book.IMAGE" alt="Обкладинка книги" />
+        </div>
+        <div>
+          <p>Назва: {{ book.TITLE }}</p>
+          <p>Автор: {{ book.NAME }} {{ book.LASTNAME }}</p>
+          <p>Мова: {{ book.LANGUAGE }}</p>
+          <p>К-сть сторінок: {{ book.PAGE_AMOUNT }}</p>
+        </div>
+      </div>
+      <div>
+        <p>{{ book.PRICE }} .00</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
     import axios from "axios";
 
     export default {
-        name: 'UserAcc',
-        data(){
-            return{
-                user: '',
-                order: ''
-            }
-        },
-        created() {
-            axios.get(`http://localhost:8080/getAllUserInf`, { withCredentials:
-                    true })
-                .then((response) => {this.user = response.data.user;
-                                    console.log(response.data.user);
-                                     this.order = response.data.order})
-                .catch((error) => {console.log(error)})
-        },
-        methods:{
-            logout(){
-                axios.post(`http://localhost:8080/logout`,'',{ withCredentials:
-                        true })
-                    .catch((error) => {console.log(error)})
-                this.$router.push("/");
-            }
+      name: 'UserAcc',
+      data() {
+        return {
+          users: [
+            {
+              ID: 1,
+              NAME: 'Олександр',
+              LASTNAME: 'Коваленко',
+              PHONE: '123456789',
+              EMAIL: 'oleksandr.k@example.com',
+            },
+          ],
+          orders: [
+            {
+              ID: 1,
+              TITLE: 'Книга 1',
+              NAME: 'Іван',
+              LASTNAME: 'Франко',
+              LANGUAGE: 'Українська',
+              PAGE_AMOUNT: 200,
+              PRICE: 150,
+              IMAGE:'https://readua.com/wp-content/uploads/2022/08/kobzar.png',
+            },
+            {
+              ID: 2,
+              TITLE: 'Книга 2',
+              NAME: 'Тарас',
+              LASTNAME: 'Шевченко',
+              LANGUAGE: 'Українська',
+              PAGE_AMOUNT: 300,
+              PRICE: 200,
+              IMAGE:  'https://book24.ua/upload/iblock/69f/69ffb64b73d10a22c8efc78ea48102dd.jpg',
+            },
+          ],
+        };
+      },
 
-        }
-    }
+    };
+    // export default {
+    //     name: 'UserAcc',
+    //     data(){
+    //         return{
+    //             user: '',
+    //             order: ''
+    //         }
+    //     },
+    //     created() {
+    //         axios.get(`http://localhost:8080/getAllUserInf`, { withCredentials:
+    //                 true })
+    //             .then((response) => {this.user = response.data.user;
+    //                                 console.log(response.data.user);
+    //                                  this.order = response.data.order})
+    //             .catch((error) => {console.log(error)})
+    //     },
+    //     methods:{
+    //         logout(){
+    //             axios.post(`http://localhost:8080/logout`,'',{ withCredentials:
+    //                     true })
+    //                 .catch((error) => {console.log(error)})
+    //             this.$router.push("/");
+    //         }
+    //
+    //     }
+    // }
 </script>
 
 <style>

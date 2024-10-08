@@ -5,14 +5,15 @@
       <ul class="social-links">
         <li>
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <i class="fi fi-brands-facebook"></i>Facebook</a>
+            <i class="fa-brands fa-facebook" style="color: #1100ff;"></i>Facebook</a>
         </li>
         <li>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter" style="color: #178de8;"></i>
+            Twitter</a>
         </li>
         <li>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <i class="fi fi-brands-instagram"></i> Instagram
+            <i class="fa-brands fa-instagram"></i> Instagram
           </a>
         </li>
       </ul>
@@ -21,6 +22,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'Footer',
   data() {

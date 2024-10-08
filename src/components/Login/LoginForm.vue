@@ -5,11 +5,11 @@
             <tbody>
             <tr >
                 <td class="text-center">
-                    <a href="/UserLog">&#10004  Я читач</a></td>
+                    <a href="/UserLog"><i class="fa-solid fa-user"></i> Я читач</a></td>
             </tr>
             <tr>
                 <td class="text-center">
-                    <a href="/AuthorLog">&#10004  Я письменник</a></td>
+                    <a href="/AuthorLog"><i class="fa-solid fa-pen-nib"></i>  Я письменник</a></td>
             </tr>
             </tbody>
         </table>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-
+import 'https://kit.fontawesome.com/e223accf0a.js'
     export default {
         name: 'LoginForm'
     }

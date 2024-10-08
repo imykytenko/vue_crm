@@ -7,48 +7,48 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import ('../views/Home.vue')
+      component: () => import ('../views/Home.vue') //це є
     },
 
     {
       path: '/BooksCatalog',
       name: 'BooksCatalog',
-      component: () => import('../views/ForUser/BooksCatalog.vue')
+      component: () => import('../views/ForUser/BooksCatalog.vue')//це є
     },
     {
       path: '/Registration',
       name: 'Registration',
-      component: () => import('../views/Registration.vue')
+      component: () => import('../views/Registration.vue')//це є
     },
     {
       path: '/UserForm',
       name: 'UserForm',
-      component: () => import('../components/Registration/UserForm.vue')
+      component: () => import('../components/Registration/UserForm.vue')//це є
     },
     {
       path: '/AuthorForm',
       name: 'AuthorForm',
-      component: () => import('../components/Registration/AuthorForm.vue')
+      component: () => import('../components/Registration/AuthorForm.vue')//це є
     },
     {
       path: '/Login',
       name: 'Login',
-      component: () => import('../views/Login.vue')
+      component: () => import('../views/Login.vue')//це є
     },
     {
       path: '/UserLog',
       name: 'UserLog',
-      component: () => import('../components/Login/UserLog.vue')
+      component: () => import('../components/Login/UserLog.vue')//це є
     },
     {
       path: '/AuthorLog',
       name: 'AuthorLog',
-      component: () => import('../components/Login/AuthorLog.vue')
+      component: () => import('../components/Login/AuthorLog.vue')//це є
     },
     {
       path: '/Account',
       name: 'Account',
-      component: () => import('../views/ForUser/Account.vue')
+      component: () => import('../views/ForUser/Account.vue')//нема адаптиву
     },
     {
       path: '/AccountAuthor',

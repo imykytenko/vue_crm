@@ -1,6 +1,8 @@
 <template>
+  <div class="container">
     <Navbar :active-page_2="activePage_2"></Navbar>
-    <Books/>
+    <Books />
+  </div>
 </template>
 
 <script>
@@ -18,7 +20,15 @@
                 activePage_2: 'bookCatalog',
             }
         }
-
-
     }
 </script>
+
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+</style>

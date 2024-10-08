@@ -6,12 +6,12 @@
       <tbody>
       <tr>
         <td class="text-center">
-          <a href="/UserForm">&#10004 Я читач</a>
+          <a href="/UserForm"><i class="fa-solid fa-user"></i> Я читач</a>
         </td>
       </tr>
       <tr>
         <td class="text-center">
-          <a href="/AuthorForm">&#10004 Я письменник</a>
+          <a href="/AuthorForm"><i class="fa-solid fa-pen-nib"></i> Я письменник</a>
         </td>
       </tr>
       </tbody>
@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import 'https://kit.fontawesome.com/e223accf0a.js'
 export default {
   name: 'RegistrationForm'
 }

@@ -9,6 +9,8 @@ import VueTheMask from 'vue-the-mask'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import 'https://kit.fontawesome.com/e223accf0a.js'
+import 'https://code.jquery.com/jquery-3.5.1.slim.min.js'
 
 const app = createApp(App)
 
