@@ -13,10 +13,10 @@
       <tbody>
       <tr v-for="author in authors" :key="author.ID">
         <th scope="row">{{ author.ID }}</th>
-        <td>{{ author.NAME }}</td>
-        <td>{{ author.LASTNAME }}</td>
-        <td>{{ author.EMAIL }}</td>
-        <td>{{ author.PHONE }}</td>
+        <td data-label="Ім'я">{{ author.NAME }}</td>
+        <td data-label="Прізвище">{{ author.LASTNAME }}</td>
+        <td data-label="Пошта">{{ author.EMAIL }}</td>
+        <td data-label="Номер телефону">{{ author.PHONE }}</td>
       </tr>
 
       </tbody>
@@ -59,7 +59,7 @@ body {
 }
 
 .table {
-  width: 100%;
+  width: 1400px;
   background-color: #fff;
   color: #333;
   border-collapse: collapse;
@@ -68,16 +68,17 @@ body {
 }
 
 th, td {
-  padding: 10px;
+  padding: 15px;
   text-align: left;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ddd;
 }
 
 th {
-  background-color: #000;
+  background-color: #343a40;
   color: #fff;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 tbody tr {
@@ -85,8 +86,28 @@ tbody tr {
 }
 
 tbody tr:hover {
-  background-color: #f1f1f1;
+  background-color: #e9ecef;
   transform: translateY(-3px);
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+  border-radius: 5px;
+  background-color: black;
+  color: #fff;
+}
+
+.btn-primary:hover{
+  background-color: #565e64;
 }
 
 .tab {

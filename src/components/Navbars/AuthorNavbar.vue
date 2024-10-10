@@ -1,5 +1,6 @@
 <template>
     <div>
+      <img src="/src/assets/logoNavbar.png" alt="Logo" class="logo">
         <h1 class="header">Publishing world</h1>
         <ul class="nav nav-underline ul">
             <li class="nav-item">
@@ -41,6 +42,13 @@
 <style>
     .nav-item a{
         margin: 20px;
+    }
+
+    .logo {
+      width: 160px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px auto;
     }
 
     .header{

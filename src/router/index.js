@@ -48,7 +48,7 @@ const router = createRouter({
     {
       path: '/Account',
       name: 'Account',
-      component: () => import('../views/ForUser/Account.vue')//нема адаптиву
+      component: () => import('../views/ForUser/Account.vue')//це є
     },
     {
       path: '/AccountAuthor',
@@ -58,7 +58,7 @@ const router = createRouter({
     {
       path: '/NewApplication',
       name: 'NewApplication',
-      component: () => import('../views/ForAuthor/NewApplication.vue')
+      component: () => import('../views/ForAuthor/NewApplication.vue')//це є
     },
     {
       path: '/Admin',
@@ -68,27 +68,27 @@ const router = createRouter({
     {
       path: '/UsersTable',
       name: 'UsersTable',
-      component: () => import('../views/ForAdmin/AdminTables/UsersTable.vue')
+      component: () => import('../views/ForAdmin/AdminTables/UsersTable.vue')//це є
     },
     {
       path: '/AuthorsTable',
       name: 'AuthorsTable',
-      component: () => import('../views/ForAdmin/AdminTables/AuthorsTable.vue')
+      component: () => import('../views/ForAdmin/AdminTables/AuthorsTable.vue')//це є
     },
     {
       path: '/OrdersTable',
       name: 'OrdersTable',
-      component: () => import('../views/ForAdmin/AdminTables/OrdersTable.vue')
+      component: () => import('../views/ForAdmin/AdminTables/OrdersTable.vue')//це є
     },
     {
       path: '/BooksTable',
       name: 'BooksTable',
-      component: () => import('../views/ForAdmin/AdminTables/BooksTable.vue')
+      component: () => import('../views/ForAdmin/AdminTables/BooksTable.vue')//це є
     },
     {
       path: '/ApplicationsTable',
       name: 'ApplicationsTable',
-      component: () => import('../views/ForAdmin/AdminTables/ApplicationsTable.vue')
+      component: () => import('../views/ForAdmin/AdminTables/ApplicationsTable.vue')//це є
     },
 
 

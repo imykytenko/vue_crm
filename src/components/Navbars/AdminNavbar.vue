@@ -1,5 +1,6 @@
 <template>
   <div>
+    <img src="/src/assets/logoNavbar.png" alt="Logo" class="logo">
     <h1 class="header">Publishing World</h1>
     <ul class="nav nav-underline ul">
       <li class="nav-item">
@@ -45,8 +46,10 @@ export default {
   },
   methods: {
     logout() {
-      axios.post(`http://localhost:8080/logout`, '', { withCredentials: true })
-          .catch((error) => { console.log(error); });
+      axios.post(`http://localhost:8080/logout`, '', {withCredentials: true})
+          .catch((error) => {
+            console.log(error);
+          });
       this.$router.push("/Admin");
     }
   }
@@ -61,7 +64,6 @@ body {
 }
 
 .header {
-  padding-top: 50px;
   color: #000;
   text-align: center;
   font-size: 36px;

@@ -13,7 +13,8 @@
         </div>
       </div>
       <div class="button-wrapper">
-        <button type="button" v-on:click="addToOrder(book.ID)" class="btn btn-success">{{ book.PRICE }}.00</button>
+        <p>Додати до замовлення</p>
+        <button type="button" v-on:click="addToOrder(book.ID)" class="btn btn-success">{{ book.PRICE }}.00 грн</button>
       </div>
     </div>
   </div>
@@ -84,6 +85,10 @@ export default {
 //    }
 </script>
 <style>
+body {
+  background-color: #f1f1f1;
+  font-family: Arial, sans-serif;
+}
 .div {
   width: 100%;
   max-width: 800px;
@@ -133,12 +138,11 @@ export default {
 }
 
 .button-wrapper {
-  display: flex;
-  justify-content: flex-end;
+  display:table-column;
 }
 
 .btn {
-  width: 100px;
+  width: 130px;
   border-color: #000;
   background-color: #000;
   color: #fff;
@@ -152,6 +156,11 @@ export default {
 
   .img {
     margin: 0 0 10px 0;
+  }
+
+  .button-wrapper {
+    display:table-column;
+    margin-top: 22px ;
   }
 
   .btn {

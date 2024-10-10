@@ -1,42 +1,44 @@
 <template>
-<!--    <div class="tab" v-if="isAdmin === 'true'">-->
   <div class="tab">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Назва</th>
-                <th scope="col">Автор</th>
-                <th scope="col">Мова</th>
-                <th scope="col">К-сть сторінок</th>
-                <th scope="col">Ціна</th>
-                <th scope="col">Дія</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr v-for="book in books" :key="book.ID">
-                <th scope="row">{{book.ID}}</th>
-                <td><input type="text" v-model="book.TITLE"></td>
-                <td>{{book.NAME}}  {{book.LASTNAME}}</td>
-                <td><input type="text" v-model="book.LANGUAGE"></td>
-                <td><input type="text" v-model="book.PAGE_AMOUNT"></td>
-                <td><input type="text" v-model="book.PRICE"></td>
-                <td class="buttons"><button type="button"
-                                            class="btn btn-primary"
-                            v-on:click="save(book.ID, book.TITLE, book.LANGUAGE,
-                             book.PAGE_AMOUNT, book.PRICE)">Зберегти
-                </button>
-                    <button type="button" class="btn btn-danger"
-                            v-on:click="del(book.ID)"> Видалити
-                    </button></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Назва</th>
+        <th scope="col">Автор</th>
+        <th scope="col">Мова</th>
+        <th scope="col">К-сть сторінок</th>
+        <th scope="col">Ціна</th>
+        <th scope="col">Дія</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="book in books" :key="book.ID">
+        <th scope="row">{{ book.ID }}</th>
+        <td data-label="Назва"><input type="text" v-model="book.TITLE"/></td>
+        <td data-label="Автор">{{ book.NAME }} {{ book.LASTNAME }}</td>
+        <td data-label="Мова"><input type="text" v-model="book.LANGUAGE"/></td>
+        <td data-label="К-сть сторінок"><input type="text" v-model="book.PAGE_AMOUNT"/></td>
+        <td data-label="Ціна"><input type="text" v-model="book.PRICE"/></td>
+        <td data-label="Дія" class="buttons">
+          <button type="button" class="btn btn-primary"
+                  @click="save(book.ID, book.TITLE, book.LANGUAGE, book.PAGE_AMOUNT, book.PRICE)">
+            Зберегти
+          </button>
+          <button type="button" class="btn btn-danger" @click="del(book.ID)">
+            Видалити
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
+
 
 <script>
 import axios from 'axios';
+
 export default {
   name: 'Books',
   data() {
@@ -128,7 +130,7 @@ body {
 }
 
 .table {
-  width: 100%;
+  width: 1400px;
   background-color: #fff;
   color: #333;
   border-collapse: collapse;

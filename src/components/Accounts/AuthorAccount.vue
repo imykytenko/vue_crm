@@ -24,10 +24,12 @@
     </div>
     <button type="button" class="btn btn-primary" v-on:click="logout">Вийти</button>
     <h3 class="text-center">Мої заявки</h3>
-    <div class="application-container" v-for="application in application" :key="application.ID">
+    <div  class="shadow div p-3 mb-5 bg-body-tertiary rounded" v-for="application in application" :key="application.ID">
       <div class="application-card">
-        <div class="title">{{ application.BOOK_TITLE }}</div>
-        <div class="status">{{ application.STATUS }}</div>
+        <div class="book-title">{{ application.BOOK_TITLE }}</div>
+        <div class="status-label" :class="statusClass(application.STATUS)">
+          {{ application.STATUS }}
+        </div>
       </div>
     </div>
   </div>
@@ -90,10 +92,32 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.title {
+.book-title {
+  font-size: 18px;
   font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 5px;
+  color: #333;
+}
+
+.status-label {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.accepted {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.pending {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.rejected {
+  background-color: #dc3545;
+  color: #fff;
 }
 
 .status {
