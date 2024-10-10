@@ -63,6 +63,13 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.logo {
+  width: 160px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
 .header {
   color: #000;
   text-align: center;
@@ -100,5 +107,44 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+
+  .header {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+
+  .btn-primary {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .header {
+    font-size: 24px;
+    padding-top: 30px;
+    margin-bottom: 20px;
+  }
 }
 </style>
